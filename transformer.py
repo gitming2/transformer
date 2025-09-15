@@ -105,7 +105,7 @@ from transformers import AutoTokenizer
 
 tokenizer = AutoTokenizer.from_pretrained('klue/bert-base')
 
-df = load_data("/content/train.csv")
+df = load_data("./data/train.csv")
 
 tokenized_data = construct_tokenized_dataset(df,tokenizer,120)
 
@@ -290,7 +290,7 @@ def train():
 
 class args (): # 학습에 사용되는 파라미터들을 여기에 모아놓음
   """학습(train)과 추론(infer)에 사용되는 arguments 관리하는 class"""
-  dataset_dir = "./"
+  dataset_dir = "./data"
   model_type = "roberta" # 다른 모델 사용 가능 e.g) "bert" , "electra" ···
   model_name = "klue/roberta-large" # 다른 모델 사용 가능 e.g) "klue/bert-base" , "monologg/koelectra-base-finetuned-nsmc" ···
   save_path = "./"
