@@ -109,17 +109,12 @@ df = load_data("/content/train.csv")
 
 tokenized_data = construct_tokenized_dataset(df,tokenizer,120)
 
-type(tokenized_data)
-
 for key ,value in tokenized_data.items():
     print(key)
 
 from transformers import AutoModelForSequenceClassification
 
 model = AutoModelForSequenceClassification.from_pretrained('klue/bert-base')
-
-model
-
 
 
 """### 2️⃣ Model & Trainer
@@ -314,8 +309,6 @@ class args (): # 학습에 사용되는 파라미터들을 여기에 모아놓�
   model_dir = "./best_model" #추론 시, 저장된 모델 불러오는 경로 설정
 
 train()
-
-model # 밑에 dropout부터 FFNN임? 위에는
 
 """### 3️⃣ Inference & Evaluation
 - 학습완료된(fine-tuned) 모델을 불러와서 추론(infer)을 진행합니다.
