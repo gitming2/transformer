@@ -8,7 +8,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from sklearn.metrics import accuracy_score, f1_score
 
 from config import args
-from data_utils import prepare_dataset
+from data import prepare_dataset
 
 def inference(model, test_dataset, device, batch_size):
     """학습된 모델로 결과를 추론"""
